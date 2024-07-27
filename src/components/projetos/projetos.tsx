@@ -18,16 +18,8 @@ const Projetos: React.FC = () => {
     const [modalShow, setModalShow] = useState<boolean>(false);
     const [selectedProject, setSelectedProject] = useState<Dados | null>(null);
 
-    useEffect(() => {
-        axios.get<Dados[]>('https://api-invest-ekeh.onrender.com/dados')
-            .then(response => {
-                console.log(response.data);
-                setDados(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [1]);
+    const navigate = useNavigate();
+
 
     const Delete = (id: number) => {
         axios.delete(`https://api-invest-ekeh.onrender.com/delete/${id}`)
@@ -38,8 +30,6 @@ const Projetos: React.FC = () => {
                 console.error(error);
             });
     };
-
-    const navigate = useNavigate();
 
     const rotaprojetos = () => {
         navigate('/criarprojeto');
@@ -54,6 +44,16 @@ const Projetos: React.FC = () => {
         setSelectedProject(null);
         setModalShow(false);
     };
+
+    useEffect(() => {
+        axios.get<Dados[]>('https://api-invest-ekeh.onrender.com/dados')
+            .then(response => {
+                setDados(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, []);
 
     return (
         <div id="Container-Projetos">

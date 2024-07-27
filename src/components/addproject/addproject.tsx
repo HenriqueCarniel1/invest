@@ -30,18 +30,6 @@ const AddProject: React.FC = () => {
         navigate("/projetos");
     }
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const response = await axios.get("https://api-invest-ekeh.onrender.com/dados");
-                setProjects(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchProjects();
-    }, []);
-
     const handleSaveDados = async () => {
         const newDados = {
             name: saveName,
@@ -64,6 +52,18 @@ const AddProject: React.FC = () => {
             console.error(error);
         }
     }
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const response = await axios.get("https://api-invest-ekeh.onrender.com/dados");
+                setProjects(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchProjects();
+    }, []);
 
     return (
         <div>
