@@ -33,7 +33,7 @@ const AddProject: React.FC = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await axios.get("https://api-invest-m6y8.onrender.com/dados");
+                const response = await axios.get("https://api-invest-ekeh.onrender.com/dados");
                 setProjects(response.data);
             } catch (error) {
                 console.error(error);
@@ -50,7 +50,7 @@ const AddProject: React.FC = () => {
         };
 
         try {
-            const response = await axios.post("https://api-invest-m6y8.onrender.com/add", {
+            const response = await axios.post("https://api-invest-ekeh.onrender.com/add", {
                 Nome: newDados.name,
                 Price: newDados.Price,
                 Option: newDados.option,

@@ -19,7 +19,7 @@ const Projetos: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<Dados | null>(null);
 
     useEffect(() => {
-        axios.get<Dados[]>('https://api-invest-m6y8.onrender.com/dados')
+        axios.get<Dados[]>('https://api-invest-ekeh.onrender.com/dados')
             .then(response => {
                 console.log(response.data);
                 setDados(response.data);
@@ -30,7 +30,7 @@ const Projetos: React.FC = () => {
     }, []);
 
     const Delete = (id: number) => {
-        axios.delete(`https://api-invest-m6y8.onrender.com/delete/${id}`)
+        axios.delete(`https://api-invest-ekeh.onrender.com/delete/${id}`)
             .then(response => {
                 setDados(dados.filter(dado => dado.id !== id));
             })

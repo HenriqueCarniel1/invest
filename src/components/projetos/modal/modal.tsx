@@ -39,7 +39,7 @@ function MyModal(props: MyModalProps) {
 
     const handleSaveBases = async () => {
         try {
-            await axios.put(`https://api-invest-m6y8.onrender.com/NewDados/${project?.id}`, {
+            await axios.put(`https://api-invest-ekeh.onrender.com/NewDados/${project?.id}`, {
                 NewNome: ModalNome,
                 NewNumero: ModalNumero,
                 NewSelectType: ModalSelectType,
