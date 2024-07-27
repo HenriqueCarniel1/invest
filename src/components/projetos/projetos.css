@@ -1,0 +1,51 @@
+#Container-Projetos {
+    position: relative;
+}
+#div-projeto {
+    border: 1px solid black;
+    width: 20rem;
+    height: 15rem;
+    margin-top: 10rem;
+}
+#projetos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#buttons-div-projetos {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+#buttons-div-projetos button{
+    background-color: black;
+    color:white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#title-div-projetos {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+#title-div-projetos {
+    color: yellow;
+}
+#div-projetos-tb {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+}
+#button {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    background-color: black;
+    border: none;
+    color:white;
+    padding: 10px;
+    cursor: pointer;
+}
