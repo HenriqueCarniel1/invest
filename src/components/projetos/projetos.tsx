@@ -27,7 +27,7 @@ const Projetos: React.FC = () => {
             .catch(error => {
                 console.error(error);
             });
-    }, [3]);
+    }, [1]);
 
     const Delete = (id: number) => {
         axios.delete(`https://api-invest-ekeh.onrender.com/delete/${id}`)
