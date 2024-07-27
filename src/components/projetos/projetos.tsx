@@ -5,7 +5,6 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import MyModal from './modal/modal';
-import { useLocation } from 'react-router-dom';
 
 interface Dados {
     id: number;
@@ -19,8 +18,6 @@ const Projetos: React.FC = () => {
     const [modalShow, setModalShow] = useState<boolean>(false);
     const [selectedProject, setSelectedProject] = useState<Dados | null>(null);
 
-    const location = useLocation();
-
     useEffect(() => {
         axios.get<Dados[]>('https://api-invest-ekeh.onrender.com/dados')
             .then(response => {
@@ -30,7 +27,7 @@ const Projetos: React.FC = () => {
             .catch(error => {
                 console.error(error);
             });
-    }, [location.pathname]);
+    }, [3]);
 
     const Delete = (id: number) => {
         axios.delete(`https://api-invest-ekeh.onrender.com/delete/${id}`)
